@@ -19,7 +19,7 @@ const categories = [
     eyebrow: 'RENDIMIENTO Y CONFIANZA',
     desc: 'Encontrá repuestos para mantener tu moto en condiciones y disfrutar cada recorrido. Consultanos por la pieza que necesitás y te ayudamos a encontrar la opción adecuada.',
     cover: 'repuestos.jpg',
-    files: ['barrales.jpg', 'escapes.jpg', 'neumaticos.jpg', 'tableros.jpg'],
+    files: ['barrales.jpg', 'escapes.jpg', 'neumaticos.jpg', 'tableros.jpg', 'repuestos.jpg', 'repuestos-1.jpg', 'repuestos-2.jpg', 'repuestos-03.jpg', 'repuestos-04.jpg', 'repuestos-05.jpg'],
     message: 'Hola Paredes Motos, quiero consultar por repuestos para mi moto.'
   },
   {
@@ -29,12 +29,20 @@ const categories = [
     desc: 'Dale a tu moto el estilo que buscás. Explorá cubre tanques, guantes, luces, mochilas y accesorios para completar tu equipamiento.',
     cover: 'accesorios-01.png',
     files: [
-      ...Array.from({ length: 10 }, (_, i) =>
-        `cubre-tanque-${String(i + 1).padStart(2, '0')}.${i < 5 ? 'jpg' : 'png'}`
-      ),
       'accesorios-01.png', 'accesorios-02.png',
+      'accesorios-3.jpg', 'accesorios-4.jpg',
+      'accesorios-5.jpg', 'accesorios-6.jpg',
+      'accesorios-7.jpg', 'accesorios-8.jpg',
+      'accesorios-9.jpg', 'accesorios-10.jpg',
+      'accesorios-11.jpg', 'accesorios-12.jpg',
+      'cubre-tanque-01.jpg', 'cubre-tanque-02.jpg',
+      'cubre-tanque-03.jpg', 'cubre-tanque-04.jpg',
+      'cubre-tanque-05.jpg', 'cubre-tanque-06.png',
+      'cubre-tanque-07.png', 'cubre-tanque-08.png',
+      'cubre-tanque-09.png', 'cubre-tanque-10.png',
       'guantes-01.png', 'guantes-02.png', 'guantes-03.png',
-      'luces.jpg', 'luz-01.png', 'luz-02.png', 'mochila.png'
+      'luces.jpg', 'luz-01.png', 'luz-02.png',
+      'mochila.png', 'gorras.jpg'
     ],
     message: 'Hola Paredes Motos, quiero consultar por accesorios.'
   },
@@ -44,7 +52,7 @@ const categories = [
     eyebrow: 'PROTECCIÓN Y ESTILO',
     desc: 'Conocé nuestra selección de cascos. Consultanos por modelos, diseños y disponibilidad para encontrar el que mejor se adapte a tus necesidades.',
     cover: 'cascos-principal.png',
-    files: ['cascos-principal.png', 'cascos-01.png', 'cascos-02.png', 'cascos-03.png', 'cascos-04.png'],
+    files: ['cascos-principal.png', 'cascos-01.png', 'cascos-02.png', 'cascos-03.png', 'cascos-04.png', 'cascos-5.jpg', 'cascos-6.jpg', 'cascos-7.jpg', 'cascos-8.jpg', 'cascos-9.jpg', 'cascos-10.jpg', 'cascos-11.jpg'],
     message: 'Hola Paredes Motos, quiero consultar por cascos.'
   },
   {
@@ -71,8 +79,17 @@ const categories = [
     eyebrow: 'PARA EL TRABAJO BIEN HECHO',
     desc: 'Conocé nuestras herramientas y consultanos por los elementos que necesitás para el mantenimiento y la reparación de motos.',
     cover: 'herramientas.png',
-    files: ['herramientas.png'],
+    files: ['herramientas.png', 'herramientas-1.jpg', 'herramientas-2.jpg'],
     message: 'Hola Paredes Motos, quiero consultar por herramientas.'
+  },
+  {
+    id: 'aceites',
+    title: 'Aceites',
+    eyebrow: 'LUBRICACIÓN Y CUIDADO',
+    desc: 'Conocé nuestra selección de aceites y productos para el cuidado de tu moto. Consultanos por opciones y disponibilidad.',
+    cover: 'aceites-portada.jpg',
+    files: ['aceites-01.jpg'],
+    message: 'Hola Paredes Motos, quiero consultar por aceites para mi moto.'
   }
 ]
 
@@ -140,6 +157,7 @@ app.innerHTML = `
           <a href="#repuestos">Repuestos</a>
           <a href="#accesorios">Accesorios</a>
           <a href="#cascos">Cascos</a>
+          <a href="#aceites">Aceites</a>
           <a href="#taller">Taller</a>
           <a href="#accidentes">Accidentes</a>
           <a href="#videos">Videos</a>
@@ -267,11 +285,33 @@ app.innerHTML = `
 
       <section class="videos-section section-wrap" id="videos">
         <div class="section-heading">
-          <div><span class="eyebrow">PAREDES MOTOS POR DENTRO</span><h2>ACCIÓN EN <span>VIDEO.</span></h2></div>
+          <div>
+            <span class="eyebrow">PAREDES MOTOS POR DENTRO</span>
+            <h2>CONOCÉ NUESTRO <span>NEGOCIO.</span></h2>
+          </div>
           <span class="section-number">PM / MEDIA</span>
         </div>
-        <p class="section-description">Conocé más de nuestro negocio a través de los videos. Tocá reproducir para ver cada uno.</p>
-        <div class="video-grid">
+        <p class="section-description">Te invitamos a conocer Paredes Motos. Descubrí nuestro negocio, nuestros productos y todo lo que tenemos para ofrecerte.</p>
+
+        <article class="video-card video-featured">
+          <div class="video-frame">
+            <video controls preload="metadata" playsinline aria-label="Conocé nuestro negocio - Paredes Motos">
+              <source src="/videos/video-paredes.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video.
+            </video>
+          </div>
+          <div class="video-caption">
+            <span>VIDEO PRINCIPAL</span>
+            <b>CONOCÉ NUESTRO NEGOCIO</b>
+          </div>
+        </article>
+
+        <div class="gallery-heading">
+          <span>DESCUBRÍ MÁS DE PAREDES MOTOS</span>
+          <span>NUESTROS VIDEOS</span>
+        </div>
+
+        <div class="video-grid video-grid-secondary">
           ${['video-01.mp4','video-02.mp4','video-03.mp4','video-04.mp4','video-05.mp4'].map((video, i) => `
             <article class="video-card">
               <div class="video-frame">
@@ -280,7 +320,10 @@ app.innerHTML = `
                   Tu navegador no puede reproducir este video.
                 </video>
               </div>
-              <div class="video-caption"><span>VIDEO / 0${i + 1}</span><b>PAREDES MOTOS</b></div>
+              <div class="video-caption">
+                <span>VIDEO / 0${i + 1}</span>
+                <b>PAREDES MOTOS</b>
+              </div>
             </article>`).join('')}
         </div>
       </section>
